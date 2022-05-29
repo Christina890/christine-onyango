@@ -50,6 +50,6 @@ public class TestCases {
         Response response = given().spec(requestSpec).basePath("/findByStatus").queryParam("status", "available").when().get();
         Assert.assertEquals(response.getStatusCode(),200);
 
-}
+    }
 
 }
