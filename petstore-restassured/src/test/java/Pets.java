@@ -45,7 +45,6 @@ public class Pets {
     @Test
     void getPetByStatus(){
        given().spec(requestSpec).basePath("/findByStatus").queryParam("status", "available").when().get().then().spec(responseSpec).log().all();
-
     }
 
     @Test
