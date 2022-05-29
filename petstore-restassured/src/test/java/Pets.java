@@ -1,5 +1,4 @@
 import static io.restassured.RestAssured.*;
-
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -7,13 +6,12 @@ import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 
 
-public class TestCases {
+public class Pets {
     RequestSpecification requestSpec;
     ResponseSpecification responseSpec;
     @BeforeClass
@@ -42,14 +40,17 @@ public class TestCases {
         //pet.put("tags",tags);
         pet.put("status","available");
         given().spec(requestSpec).when().body(pet).post().then().spec(responseSpec);
+    }
 
+    @Test
+    void getPetByStatus(){
+       given().spec(requestSpec).basePath("/findByStatus").queryParam("status", "available").when().get().then().spec(responseSpec).log().all();
 
     }
-    @Test
-    void getPet(){
-        Response response = given().spec(requestSpec).basePath("/findByStatus").queryParam("status", "available").when().get();
-        Assert.assertEquals(response.getStatusCode(),200);
 
+    @Test
+    void deletePet(){
+        given().spec(requestSpec).basePath("/10").when().delete().then().spec(responseSpec).log().all();
     }
 
 }
