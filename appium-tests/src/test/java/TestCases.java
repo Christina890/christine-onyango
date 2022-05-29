@@ -1,16 +1,13 @@
-import groovyjarjarpicocli.CommandLine;
 import static io.restassured.RestAssured.*;
-import io.restassured.RestAssured;
+
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -18,9 +15,13 @@ import java.util.Map;
 
 public class TestCases {
     RequestSpecification requestSpec;
+    ResponseSpecification responseSpec;
     @BeforeClass
     public void specs(){
         requestSpec=given().baseUri("https://petstore3.swagger.io/api/v3/pet").contentType("application/json");
+
+        ResponseSpecBuilder resBuilder=new ResponseSpecBuilder();
+        responseSpec= resBuilder.expectStatusCode(200).build();
     }
 
     @Test
@@ -40,8 +41,8 @@ public class TestCases {
         //tags.put("name","doggie");
         //pet.put("tags",tags);
         pet.put("status","available");
-        Response response = given().spec(requestSpec).when().body(pet).post();
-        Assert.assertEquals(response.getStatusCode(),200);
+        given().spec(requestSpec).when().body(pet).post().then().spec(responseSpec);
+
 
     }
     @Test
