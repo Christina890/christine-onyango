@@ -38,6 +38,10 @@ public class Store {
         void findOrder(){
             given().spec(requestSpec).basePath("/order/10").when().get().then().spec(responseSpec).log().all();
         }
+        @Test
+        void deleteOrder(){
+            given().spec(requestSpec).basePath("/order/10").when().delete().then().spec(responseSpec).log().all();
+        }
     }
 
 
