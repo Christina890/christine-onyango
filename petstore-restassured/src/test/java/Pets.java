@@ -31,8 +31,8 @@ public class Pets {
         categoryMap.put("id", "2");
         categoryMap.put("name", "dogs");
         pet.put("category",categoryMap);
-        String[] photolist = {"url"};
-        pet.put("photoUrls",photolist);
+        String[] photoList = {"url"};
+        pet.put("photoUrls",photoList);
         pet.put("status","available");
         //Map<String, String> tags = new LinkedHashMap<>();
         //tags.put("id","0");
