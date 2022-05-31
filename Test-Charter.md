@@ -1,48 +1,114 @@
-### Solution
+## Monefy App Test Charter
 
-####Tools and Framework
+### Charter 001 - Application Installation
+#### Test Device
+Samsung S20
+#### OS Version
+Android 12
+#### Time allocated
+20 Minutes
+#### Coverage
+|#| Step | Expected result |
+| ------ | ------ | ------ |
+|1| Install the Monefy application from PlayStore | Application is installed successfully |
+|2| Open the installed application| The application is opened successfully and user navigated to the launch screen |
+#### Bugs
+No bugs discovered
+#### Recommendation
+None
 
-- Language - Java
-- Test Framework - TestNG
-- Build Tool - Maven
-- Test Library - RestAssured
 
-#### How to set up the project
+### Charter 002 - Application Launch Screens
+#### Test Device
+Samsung S20
+#### OS Version
+Android 12
+#### Time allocated
+20 Minutes
+#### Coverage
+|#| Step | Expected result |
+| ------ | ------ | ------ |
+|1| Navigate through the launch screens | User is able to navigate from one screen to another |
+|2| Verify correctness of the content| Some gramatical errors in the text |
+#### Bugs
+Control your "Spend" and start saving should read control your "spending" and start saving
+#### Recommendation
+User should be allowed to swipe the screens instead of using buttons. User should be allowed to swipe to the screen before if need be
+Most common settings like currency and language selection should be included as part of the set up screens
 
-- Clone the repository
-- Install maven using
-  `brew install maven`
-  ####How to execute the test
+### Charter 003 - Dashboard/Landing Screen
+#### Test Device
+Samsung S20
+#### OS Version
+Android 12
+#### Time allocated
+20 Minutes
+#### Coverage
+|#| Step | Expected result |
+| ------ | ------ | ------ |
+|1| Verify the look and feel of the dashboard | Tips displayed on the dashboard should be dismissed automatically after a given time  |
 
-- Execute `mvn test` on your terminal
+#### Bugs
+Tooltips should automatically close when a user navigates to a different screen or after a few seconds
 
-#### How to access the reports
+### Charter 004 - Add Expenditure
+#### Test Device
+Samsung S20
+#### OS Version
+Android 12
+#### Time allocated
+20 Minutes
+#### Coverage
+|#| Step | Expected result |
+| ------ | ------ | ------ |
+|1| Add expenditure | User should be able to add an expenditure and label it accordingly  |
+|2| Balance update | Adding an expenditure should update the balance accordingly |
+|3| Expenditure tagging | Any expenditure added should be tagged to the correct category on the dashboard |
+|4| List expenditure | Any expenditure added should be added to the list of transactions for the user |
+|5| Select Account |User should be able to select the account for which they are adding an expenditure |
 
-- Find the test report here
-  - /user-management-api-test-suite-gyscns/target/surefire-reports/Unzer User/emailable-report.html
+#### Bugs
+Tooltips should automatically close when a user navigates to a different screen or after a few seconds
 
-### Assignment
+### Charter 005 - Add Income
+#### Test Device
+Samsung S20
+#### OS Version
+Android 12
+#### Time allocated
+20 Minutes
+#### Coverage
+|#| Step | Expected result |
+| ------ | ------ | ------ |
+|1| Add income | User should be able to add an income and label it accordingly  |
+|2| Balance update | Adding an income should update the balance accordingly |
+|3| List income | Any expenditure added should be added to the list of transactions for the user |
+|4| Select Account |User should be able to select the account for which they are adding an expenditure |
 
-Please create a simple test suite that verifies functionality of a public user management API available at https://m3o.com/user/api.
+#### Bugs
 
-### Some example flows that you could cover in your tests
 
-- Creation of a new user with mandatory/optional fields and verification that it was saved successfully
-- Update of existing user
-- Deletion of existing user
-- Some error scenarios, like trying to create a user with duplicated id or missing/invalid information
+### Charter 005 - Edit an existing transaction
+#### Test Device
+Samsung S20
+#### OS Version
+Android 12
+#### Time allocated
+20 Minutes
+#### Coverage
+|#| Step | Expected result |
+| ------ | ------ | ------ |
+|1| Edit income/Expense | User should be able to edit income/expense  |
+|2| Balance update | Editing the transaction amount should update the balance accordingly |
+|3| Select Account |User should be able to select the account for which they are adding an expenditure |
 
-### Our expectations for this task
+#### Bugs
 
-- Please use Java or Kotlin as programming language and Maven or Gradle as a build tool.
-- Use API testing library of your preference (for example, RestAssured, Retrofit or similar).
-- Optional: think about reporting or some other way to make test results quick to interpret and test failures easier to investigate.
-- Include description of your solution, choice of tools and instruction on how to execute the tests in the readme file.
-- Please push your code to the provided git repository and submit your assignment within 5 calendar days.
 
-### Tips
 
-- Let us know if you have any questions - we're happy to help.
-- Keep it simple, no need to spend too much time on this task or implement more than 5 test cases.
-- Think about easiness of adding new test cases and making changes when building your test suite/framework.
-- If there is something you would have improved or done differently if you had more time, please feel free to mention it in the readme file.
+
+
+
+
+
+
