@@ -51,7 +51,7 @@ public class Store {
         void deleteOrder(){
             given().spec(requestSpec).basePath("/order/10").when().delete().then().spec(responseSpec).log().all();
         }
-        
+
         @AfterTest
         void clearOrder(){
             given().spec(requestSpec).basePath("/order/10").when().delete();

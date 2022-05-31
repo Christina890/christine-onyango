@@ -4,9 +4,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import org.testng.annotations.TestInstance;
+import org.testng.annotations.*;
 
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -17,7 +15,7 @@ public class User {
     ResponseSpecification responseSpec;
     @BeforeClass
     public void specs() {
-        requestSpec = given().baseUri("https://petstore3.swagger.io/api/v3/user").contentType("application/json");
+        requestSpec = given().baseUri("https://petstore3.swagger.io/api/v3/user/").contentType("application/json");
         ResponseSpecBuilder resBuilder = new ResponseSpecBuilder();
         responseSpec = resBuilder.expectStatusCode(200).build();
     }
@@ -52,18 +50,15 @@ public class User {
     void userLogout(){
         given().spec(requestSpec).basePath("/logout").get().then().spec(responseSpec).log().all();
     }
+
     @Test
     void getUser(){
-        Response resp =getUserResponse();
-        String username=resp.jsonPath().getString("username");
-        given().spec(requestSpec).basePath(username).get().then().spec(responseSpec).log().all();
+
+        given().spec(requestSpec).basePath("/christine").get().then().spec(responseSpec).log().all();
     }
 
     @Test
     void deleteUser() {
-        Response resp = getUserResponse();
-        String username = resp.jsonPath().getString("username");
-        given().spec(requestSpec).basePath(username).get().then().spec(responseSpec).log().all();
-//add update user
+        given().spec(requestSpec).basePath("/christine").get().then().spec(responseSpec).log().all();
     }
 }
