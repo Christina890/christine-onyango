@@ -2,34 +2,34 @@
 <testng-results ignored="0" total="12" passed="11" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-31T17:09:11 EAT" name="Pet Store" finished-at="2022-05-31T17:09:40 EAT" duration-ms="29425">
+  <suite started-at="2022-05-31T20:52:24 EAT" name="Pet Store" finished-at="2022-05-31T20:52:54 EAT" duration-ms="29748">
     <groups>
     </groups>
-    <test started-at="2022-05-31T17:09:11 EAT" name="User" finished-at="2022-05-31T17:09:40 EAT" duration-ms="29425">
+    <test started-at="2022-05-31T20:52:24 EAT" name="User" finished-at="2022-05-31T20:52:54 EAT" duration-ms="29748">
       <class name="Pets">
-        <test-method is-config="true" signature="specs()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T17:09:11 EAT" name="specs" finished-at="2022-05-31T17:09:11 EAT" duration-ms="618" status="PASS">
+        <test-method is-config="true" signature="specs()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T20:52:24 EAT" name="specs" finished-at="2022-05-31T20:52:25 EAT" duration-ms="753" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- specs -->
-        <test-method signature="addPet()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T17:09:11 EAT" name="addPet" finished-at="2022-05-31T17:09:14 EAT" duration-ms="2487" status="PASS">
+        <test-method signature="addPet()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T20:52:25 EAT" name="addPet" finished-at="2022-05-31T20:52:28 EAT" duration-ms="2869" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addPet -->
-        <test-method signature="deletePet()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T17:09:14 EAT" name="deletePet" finished-at="2022-05-31T17:09:15 EAT" duration-ms="1459" status="PASS">
+        <test-method signature="deletePet()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T20:52:28 EAT" name="deletePet" finished-at="2022-05-31T20:52:30 EAT" duration-ms="1515" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deletePet -->
-        <test-method signature="getPetByStatus()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T17:09:15 EAT" name="getPetByStatus" finished-at="2022-05-31T17:09:17 EAT" duration-ms="1402" status="PASS">
+        <test-method signature="getPetByStatus()[pri:0, instance:Pets@25a65b77]" started-at="2022-05-31T20:52:30 EAT" name="getPetByStatus" finished-at="2022-05-31T20:52:31 EAT" duration-ms="1442" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPetByStatus -->
       </class> <!-- Pets -->
       <class name="User">
-        <test-method is-config="true" signature="specs()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T17:09:29 EAT" name="specs" finished-at="2022-05-31T17:09:29 EAT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="specs()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T20:52:43 EAT" name="specs" finished-at="2022-05-31T20:52:43 EAT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- specs -->
-        <test-method signature="createUser()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T17:09:29 EAT" name="createUser" finished-at="2022-05-31T17:09:30 EAT" duration-ms="1372" status="FAIL">
+        <test-method signature="createUser()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T20:52:43 EAT" name="createUser" finished-at="2022-05-31T20:52:44 EAT" duration-ms="1454" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [200] but found [500]]]>
@@ -81,61 +81,61 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
-        <test-method signature="deleteUser()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T17:09:30 EAT" name="deleteUser" finished-at="2022-05-31T17:09:32 EAT" duration-ms="1527" status="PASS">
+        <test-method signature="deleteUser()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T20:52:44 EAT" name="deleteUser" finished-at="2022-05-31T20:52:46 EAT" duration-ms="1529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
-        <test-method signature="getUser()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T17:09:32 EAT" name="getUser" finished-at="2022-05-31T17:09:33 EAT" duration-ms="1373" status="PASS">
+        <test-method signature="getUser()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T20:52:46 EAT" name="getUser" finished-at="2022-05-31T20:52:48 EAT" duration-ms="1802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUser -->
-        <test-method signature="userLogin()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T17:09:33 EAT" name="userLogin" finished-at="2022-05-31T17:09:37 EAT" duration-ms="3398" status="PASS">
+        <test-method signature="userLogin()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T20:52:48 EAT" name="userLogin" finished-at="2022-05-31T20:52:51 EAT" duration-ms="3735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogin -->
-        <test-method signature="userLogout()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T17:09:37 EAT" name="userLogout" finished-at="2022-05-31T17:09:38 EAT" duration-ms="1496" status="PASS">
+        <test-method signature="userLogout()[pri:0, instance:User@5ef60048]" started-at="2022-05-31T20:52:51 EAT" name="userLogout" finished-at="2022-05-31T20:52:53 EAT" duration-ms="1366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogout -->
       </class> <!-- User -->
       <class name="Store">
-        <test-method is-config="true" signature="specs()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:17 EAT" name="specs" finished-at="2022-05-31T17:09:17 EAT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="specs()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:31 EAT" name="specs" finished-at="2022-05-31T20:52:31 EAT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- specs -->
-        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:17 EAT" name="placeOrderResponse" finished-at="2022-05-31T17:09:18 EAT" duration-ms="1536" status="PASS">
+        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:31 EAT" name="placeOrderResponse" finished-at="2022-05-31T20:52:32 EAT" duration-ms="1435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrderResponse -->
-        <test-method signature="deleteOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:18 EAT" name="deleteOrder" finished-at="2022-05-31T17:09:20 EAT" duration-ms="1544" status="PASS">
+        <test-method signature="deleteOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:32 EAT" name="deleteOrder" finished-at="2022-05-31T20:52:34 EAT" duration-ms="1378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteOrder -->
-        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:20 EAT" name="placeOrderResponse" finished-at="2022-05-31T17:09:21 EAT" duration-ms="1497" status="PASS">
+        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:34 EAT" name="placeOrderResponse" finished-at="2022-05-31T20:52:35 EAT" duration-ms="1427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrderResponse -->
-        <test-method signature="findOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:21 EAT" name="findOrder" finished-at="2022-05-31T17:09:23 EAT" duration-ms="1536" status="PASS">
+        <test-method signature="findOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:35 EAT" name="findOrder" finished-at="2022-05-31T20:52:37 EAT" duration-ms="1940" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- findOrder -->
-        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:23 EAT" name="placeOrderResponse" finished-at="2022-05-31T17:09:24 EAT" duration-ms="1462" status="PASS">
+        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:37 EAT" name="placeOrderResponse" finished-at="2022-05-31T20:52:39 EAT" duration-ms="1423" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrderResponse -->
-        <test-method signature="getStoreInventory()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:24 EAT" name="getStoreInventory" finished-at="2022-05-31T17:09:26 EAT" duration-ms="1438" status="PASS">
+        <test-method signature="getStoreInventory()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:39 EAT" name="getStoreInventory" finished-at="2022-05-31T20:52:40 EAT" duration-ms="1437" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getStoreInventory -->
-        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:26 EAT" name="placeOrderResponse" finished-at="2022-05-31T17:09:27 EAT" duration-ms="1483" status="PASS">
+        <test-method is-config="true" signature="placeOrderResponse()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:40 EAT" name="placeOrderResponse" finished-at="2022-05-31T20:52:41 EAT" duration-ms="1390" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrderResponse -->
-        <test-method signature="placeOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:27 EAT" name="placeOrder" finished-at="2022-05-31T17:09:29 EAT" duration-ms="1554" status="PASS">
+        <test-method signature="placeOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:41 EAT" name="placeOrder" finished-at="2022-05-31T20:52:43 EAT" duration-ms="1376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- placeOrder -->
-        <test-method is-config="true" signature="clearOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T17:09:38 EAT" name="clearOrder" finished-at="2022-05-31T17:09:40 EAT" duration-ms="2176" status="PASS">
+        <test-method is-config="true" signature="clearOrder()[pri:0, instance:Store@5af97850]" started-at="2022-05-31T20:52:53 EAT" name="clearOrder" finished-at="2022-05-31T20:52:54 EAT" duration-ms="1427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearOrder -->
