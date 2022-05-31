@@ -4,7 +4,9 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -19,20 +21,27 @@ public class Store {
             ResponseSpecBuilder resBuilder=new ResponseSpecBuilder();
             responseSpec= resBuilder.expectStatusCode(200).build();
         }
+        @BeforeMethod
+        public Response placeOrderResponse(){
+            HashMap<String, Object> petOrder=new LinkedHashMap<>();
+            petOrder.put("id",10);
+            petOrder.put("petID",198772);
+            petOrder.put("status","approved");
+            petOrder.put("quantity",3);
+            petOrder.put("shipDate","2022-05-29T09:16:26.118Z");
+            petOrder.put("complete",true);
+            Response resp = given().spec(requestSpec).basePath("/order").when().body(petOrder).post();
+            return resp;
+        }
         @Test
         void getStoreInventory(){
             given().spec(requestSpec).basePath("/inventory").when().get().then().spec(responseSpec).log().all();
         }
         @Test
         void placeOrder(){
-            HashMap<String, Object> petOrder=new LinkedHashMap<>();
-            petOrder.put("id",10);
-            petOrder.put("petID",198772);
-            petOrder.put("shipDate","approved");
-            petOrder.put("quantity",3);
-            petOrder.put("status","2022-05-29T09:16:26.118Z");
-            petOrder.put("complete",true);
-            given().spec(requestSpec).basePath("/order").when().body(petOrder).post().then().spec(responseSpec).log().all();
+        Response orderResponse = placeOrderResponse();
+        Assert.assertEquals(orderResponse.getStatusCode(), 200);
+
         }
         @Test
         void findOrder(){
@@ -41,6 +50,11 @@ public class Store {
         @Test
         void deleteOrder(){
             given().spec(requestSpec).basePath("/order/10").when().delete().then().spec(responseSpec).log().all();
+        }
+        
+        @AfterTest
+        void clearOrder(){
+            given().spec(requestSpec).basePath("/order/10").when().delete();
         }
     }
 
