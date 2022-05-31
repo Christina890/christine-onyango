@@ -1,18 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 75.889 s <<< FAILURE! - in TestSuite
-Store.findOrder  Time elapsed: 2.68 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <200> but was <404>.
-
-	at Store.findOrder(Store.java:39)
-
-Store.placeOrder  Time elapsed: 6.506 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <200> but was <400>.
-
-	at Store.placeOrder(Store.java:35)
-
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.442 s - in TestSuite

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="75.889" tests="12" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="33.442" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/surefire/surefirebooter9049934463653761049.jar /Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/surefire 2022-05-30T09-45-19_320-jvmRun1 surefire14761974214909888977tmp surefire_017061781532466869000tmp"/>
+    <property name="sun.java.command" value="/Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/surefire/surefirebooter7534938602489481652.jar /Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/surefire 2022-05-31T14-01-08_183-jvmRun1 surefire10869041540541015505tmp surefire_03333974474831307301tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/test-classes:/Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/classes:/Users/christine.onyango/.m2/repository/io/rest-assured/rest-assured/4.5.1/rest-assured-4.5.1.jar:/Users/christine.onyango/.m2/repository/org/codehaus/groovy/groovy/3.0.9/groovy-3.0.9.jar:/Users/christine.onyango/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.9/groovy-xml-3.0.9.jar:/Users/christine.onyango/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/christine.onyango/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/christine.onyango/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/christine.onyango/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/christine.onyango/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/christine.onyango/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/christine.onyango/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/christine.onyango/.m2/repository/io/rest-assured/json-path/4.5.1/json-path-4.5.1.jar:/Users/christine.onyango/.m2/repository/org/codehaus/groovy/groovy-json/3.0.9/groovy-json-3.0.9.jar:/Users/christine.onyango/.m2/repository/io/rest-assured/rest-assured-common/4.5.1/rest-assured-common-4.5.1.jar:/Users/christine.onyango/.m2/repository/io/rest-assured/xml-path/4.5.1/xml-path-4.5.1.jar:/Users/christine.onyango/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/christine.onyango/.m2/repository/org/testng/testng/7.6.0/testng-7.6.0.jar:/Users/christine.onyango/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/christine.onyango/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/christine.onyango/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/christine.onyango/.m2/repository/org/webjars/jquery/3.6.0/jquery-3.6.0.jar:/Users/christine.onyango/.m2/repository/io/qameta/allure/allure-rest-assured/2.13.0/allure-rest-assured-2.13.0.jar:/Users/christine.onyango/.m2/repository/io/qameta/allure/allure-attachments/2.13.0/allure-attachments-2.13.0.jar:/Users/christine.onyango/.m2/repository/io/qameta/allure/allure-java-commons/2.13.0/allure-java-commons-2.13.0.jar:/Users/christine.onyango/.m2/repository/io/qameta/allure/allure-model/2.13.0/allure-model-2.13.0.jar:/Users/christine.onyango/.m2/repository/org/apache/tika/tika-core/1.20/tika-core-1.20.jar:/Users/christine.onyango/.m2/repository/org/jooq/joor-java-8/0.9.10/joor-java-8-0.9.10.jar:/Users/christine.onyango/.m2/repository/org/freemarker/freemarker/2.3.28/freemarker-2.3.28.jar:/Users/christine.onyango/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.2.2/jackson-databind-2.13.2.2.jar:/Users/christine.onyango/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.2/jackson-annotations-2.13.2.jar:/Users/christine.onyango/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.2/jackson-core-2.13.2.jar:"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/surefire/surefirebooter9049934463653761049.jar"/>
+    <property name="surefire.real.class.path" value="/Users/christine.onyango/Documents/christine-onyango/petstore-restassured/target/surefire/surefirebooter7534938602489481652.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="16.0.2+7-67"/>
@@ -54,30 +54,16 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="60.0"/>
   </properties>
-  <testcase name="addPet" classname="Pets" time="2.611"/>
-  <testcase name="deletePet" classname="Pets" time="1.613"/>
-  <testcase name="getPetByStatus" classname="Pets" time="1.463"/>
-  <testcase name="deleteOrder" classname="Store" time="1.581"/>
-  <testcase name="findOrder" classname="Store" time="2.68">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <200> but was <404>.
-
-	at Store.findOrder(Store.java:39)
-]]></failure>
-  </testcase>
-  <testcase name="getStoreInventory" classname="Store" time="2.09"/>
-  <testcase name="placeOrder" classname="Store" time="6.506">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <200> but was <400>.
-
-	at Store.placeOrder(Store.java:35)
-]]></failure>
-  </testcase>
-  <testcase name="createUser" classname="User" time="3.225"/>
-  <testcase name="deleteUser" classname="User" time="3.617"/>
-  <testcase name="getUser" classname="User" time="3.814"/>
-  <testcase name="userLogin" classname="User" time="12.198"/>
-  <testcase name="userLogout" classname="User" time="33.244"/>
+  <testcase name="addPet" classname="Pets" time="2.311"/>
+  <testcase name="deletePet" classname="Pets" time="1.554"/>
+  <testcase name="getPetByStatus" classname="Pets" time="1.402"/>
+  <testcase name="deleteOrder" classname="Store" time="1.444"/>
+  <testcase name="findOrder" classname="Store" time="1.537"/>
+  <testcase name="getStoreInventory" classname="Store" time="1.48"/>
+  <testcase name="placeOrder" classname="Store" time="1.336"/>
+  <testcase name="createUser" classname="User" time="1.367"/>
+  <testcase name="deleteUser" classname="User" time="3.485"/>
+  <testcase name="getUser" classname="User" time="3.071"/>
+  <testcase name="userLogin" classname="User" time="2.872"/>
+  <testcase name="userLogout" classname="User" time="1.581"/>
 </testsuite>
