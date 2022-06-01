@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 public class TestCases {
     public AndroidDriver<MobileElement> driver;
@@ -24,8 +25,15 @@ public class TestCases {
     By category = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.ImageView");
     By getBalance = By.id("com.monefy.app.lite:id/balance_amount");
     By addIncome = By.id("com.monefy.app.lite:id/income_button");
+    By ellipsis = By.id("com.monefy.app.lite:id/overflow");
+    By accountIcon = By.id("com.monefy.app.lite:id/accounts_panel");
+    By addButton = By.id("com.monefy.app.lite:id/imageButtonAddCategory");
+    By categoryName = By.id("com.monefy.app.lite:id/editTextCategoryName");
+    By initialAmount = By.id("com.monefy.app.lite:id/initialAmount");
+    By saveButton = By.id("com.monefy.app.lite:id/save");
+    By accountCategory=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[12]/android.widget.FrameLayout/android.widget.ImageView");
     @BeforeMethod
-    public void setup() throws MalformedURLException {
+    public void setup1() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "MyAndroid");
         caps.setCapability("udid", "emulator-5554");
@@ -38,8 +46,9 @@ public class TestCases {
         driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         wait = new WebDriverWait(driver, 10);
     }
-    @Test
-    void addExpense(){
+    @BeforeMethod
+    public void setup2ApplicationLaunch(){
+
         //Click through the splash screens
         wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton)).click();
@@ -48,6 +57,9 @@ public class TestCases {
         //Close the promo
         wait.until(ExpectedConditions.visibilityOfElementLocated(closeButton)).click();
 
+    }
+    @Test
+    void addExpense(){
         //Click to add expense
         wait.until(ExpectedConditions.visibilityOfElementLocated(addExpense)).click();
 
@@ -63,13 +75,6 @@ public class TestCases {
     }
     @Test
     void addIncome(){
-        //Click through the splash screens
-        wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton)).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton)).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(continueButton)).click();
-
-        //Close the promo
-        wait.until(ExpectedConditions.visibilityOfElementLocated(closeButton)).click();
 
         //Click to add expense
         wait.until(ExpectedConditions.visibilityOfElementLocated(addIncome)).click();
@@ -84,6 +89,32 @@ public class TestCases {
         wait.until(ExpectedConditions.visibilityOfElementLocated(category)).click();
         String balance =wait.until(ExpectedConditions.visibilityOfElementLocated(getBalance)).getText();
         Assert.assertEquals(balance, "Balance $100.00");
+    }
+    @Test
+    void addAccount(){
+        //Click on the Ellispis
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ellipsis)).click();
+
+        //Click on the account icon
+        wait.until(ExpectedConditions.visibilityOfElementLocated(accountIcon)).click();
+
+        //New Account button
+        wait.until(ExpectedConditions.visibilityOfElementLocated(addButton)).click();
+
+        //Type name of account
+        wait.until(ExpectedConditions.visibilityOfElementLocated(categoryName)).sendKeys("Tina");
+
+        //Type the initial Amount
+        wait.until(ExpectedConditions.visibilityOfElementLocated(initialAmount)).sendKeys("1200");
+
+        //Select Category
+        wait.until(ExpectedConditions.visibilityOfElementLocated(accountCategory)).click();
+
+        //Save New Account
+        wait.until(ExpectedConditions.visibilityOfElementLocated(saveButton)).click();
+
+        String balance =wait.until(ExpectedConditions.visibilityOfElementLocated(getBalance)).getText();
+        Assert.assertEquals(balance, "Balance $1,200.00");
     }
 }
 
