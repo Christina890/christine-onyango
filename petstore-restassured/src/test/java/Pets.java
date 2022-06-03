@@ -1,4 +1,6 @@
 import static io.restassured.RestAssured.*;
+
+import io.qameta.allure.Description;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -23,6 +25,7 @@ public class Pets {
     }
 
     @Test
+    @Description("Test Description: A user should be able to add pets successfully")
     void addPet(){
         Map<String, Object> pet = new LinkedHashMap<>();
         pet.put("id", "23");
@@ -43,11 +46,13 @@ public class Pets {
     }
 
     @Test
+    @Description("Test Description: A user should be able to fetch pets by status")
     void getPetByStatus(){
        given().spec(requestSpec).basePath("/findByStatus").queryParam("status", "available").when().get().then().spec(responseSpec).log().all();
     }
 
     @Test
+    @Description(("Test Description: A user should be able to delete pets successfully"))
     void deletePet(){
         given().spec(requestSpec).basePath("/10").when().delete().then().spec(responseSpec).log().all();
     }
