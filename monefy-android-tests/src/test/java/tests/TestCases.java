@@ -10,9 +10,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.Account;
 import pages.Expenses;
+import pages.Transfer;
 
 public class TestCases {
-    //public AndroidDriver<MobileElement> driver;
     public WebDriverWait                wait;
 
     @BeforeMethod
@@ -56,6 +56,30 @@ public class TestCases {
         account.saveAccount();
         Thread.sleep(500);
         Assert.assertEquals(expenses.getBalance(), "Balance $1,200.00");
+    }
+    @Test
+    void transferWithZeroBalance(){
+        Transfer transfer=new Transfer();
+        transfer.clickOnTransferIcon();
+        transfer.enterTransferNotes();
+        transfer.enterTransferAmount();
+        transfer.submitTransfer();
+        Assert.assertNotEquals(transfer.confirmTransfer(),"Transfer was added" );
+    }
+    @Test
+    void editExpense() throws InterruptedException {
+        Transfer transfer=new Transfer();
+        Expenses expenses=new Expenses();
+        expenses.clickToAddExpense();
+        expenses.enterAmount();
+        expenses.selectCategory();
+        Thread.sleep(1000);
+        expenses.openTransactionList();
+        expenses.clickOnExpense();
+        expenses.editAmount();
+        expenses.selectCategory();
+        Assert.assertEquals(transfer.confirmTransfer(),"Record was updated");
+
     }
 }
 

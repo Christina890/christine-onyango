@@ -2,6 +2,7 @@ package pages;
 
 import base.TestCapabilities;
 import base.TestDriver;
+import pages.Transfer;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -16,6 +17,7 @@ public class Expenses  {
 public Expenses() {
    PageFactory.initElements(new AppiumFieldDecorator(TestDriver.getDriver()), this);
 }
+    Transfer transfer = new Transfer();
 
 @FindBy(id="com.monefy.app.lite:id/buttonContinue")
         public MobileElement continueButton;
@@ -37,26 +39,15 @@ public Expenses() {
     @FindBy(id="com.monefy.app.lite:id/income_button")
             public MobileElement addIncome;
 
+    @FindBy(id="com.monefy.app.lite:id/leftLinesImageView")
+    public MobileElement transactionHamburger;
 
-
-
-    //By closeButton = By.id("com.monefy.app.lite:id/buttonClose");
-    //By addExpense = By.id("com.monefy.app.lite:id/expense_button_title");
-    //By keyboard1 = By.id("com.monefy.app.lite:id/buttonKeyboard1");
-    //By keyboard0 = By.id("com.monefy.app.lite:id/buttonKeyboard0");
-    //By chooseCategory = By.id("com.monefy.app.lite:id/keyboard_action_button");
-    //By category = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.ImageView");
-    //By getBalance = By.id("com.monefy.app.lite:id/balance_amount");
-    //By addIncome = By.id("com.monefy.app.lite:id/income_button");
-    By ellipsis = By.id("com.monefy.app.lite:id/overflow");
-    By accountIcon = By.id("com.monefy.app.lite:id/accounts_panel");
-    By addButton = By.id("com.monefy.app.lite:id/imageButtonAddCategory");
-    By categoryName = By.id("com.monefy.app.lite:id/editTextCategoryName");
-    By initialAmount = By.id("com.monefy.app.lite:id/initialAmount");
-    By saveButton = By.id("com.monefy.app.lite:id/save");
-    By accountCategory = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[12]/android.widget.FrameLayout/android.widget.ImageView");
-
+    @FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ExpandableListView/android.widget.RelativeLayout[1]/android.widget.LinearLayout")
+    public MobileElement expense;
+    @FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ExpandableListView/android.widget.LinearLayout")
+    public MobileElement expenseSelection;
 public void skipSpashScreen() throws InterruptedException {
+
     continueButton.click();
     Thread.sleep(1000);
     continueButton.click();
@@ -78,5 +69,21 @@ public void skipSpashScreen() throws InterruptedException {
     public void clickToAddIncome(){
     addIncome.click();
     }
+    public void openTransactionList ()
+    {
+
+        transactionHamburger.click();
+    }
+    public void clickOnExpense(){
+    expense.click();
+    expenseSelection.click();
+    }
+    public void editAmount(){
+    transfer.transferAmount.clear();
+    keyBoard1.click();
+    keyBoard1.click();
+    }
+
+
 
 }

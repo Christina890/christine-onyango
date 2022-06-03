@@ -29,13 +29,6 @@ public class Account {
     @FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[12]/android.widget.FrameLayout/android.widget.ImageView")
     public MobileElement accountCategory;
 
-    //By ellipsis = By.id("com.monefy.app.lite:id/overflow");
-    //By accountIcon = By.id("com.monefy.app.lite:id/accounts_panel");
-    //By addButton = By.id("com.monefy.app.lite:id/imageButtonAddCategory");
-    //By categoryName = By.id("com.monefy.app.lite:id/editTextCategoryName");
-    //By initialAmount = By.id("com.monefy.app.lite:id/initialAmount");
-    //By saveButton = By.id("com.monefy.app.lite:id/save");
-    //By accountCategory=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.GridView/android.widget.FrameLayout[12]/android.widget.FrameLayout/android.widget.ImageView");
 public void clickOnEllipsis(){
     ellipsis.click();
 }
