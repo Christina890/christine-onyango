@@ -6,29 +6,44 @@ import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 public class User {
+
+    String username = utils.fetchConfigProperties("username");
+    String userId = utils.fetchConfigProperties("userId");
+    String firstName=utils.fetchConfigProperties("firstName");
+    String lastName=utils.fetchConfigProperties("lastName");
+    String email= utils.fetchConfigProperties("email");
+    String password=utils.fetchConfigProperties("password");
+    String phone = utils.fetchConfigProperties("phone");
+    String userBaseUrl = utils.fetchConfigProperties("userBaseUrl");
+
     RequestSpecification requestSpec;
     ResponseSpecification responseSpec;
+
+    public User() throws IOException {
+    }
+
     @BeforeClass
     public void specs() {
-        requestSpec = given().baseUri("https://petstore3.swagger.io/api/v3/user/").contentType("application/json");
+        requestSpec = given().baseUri(userBaseUrl).contentType("application/json");
         ResponseSpecBuilder resBuilder = new ResponseSpecBuilder();
         responseSpec = resBuilder.expectStatusCode(200).build();
     }
 
     private Response getUserResponse(){
         HashMap<String, Object> user=new LinkedHashMap<>();
-        user.put("id", 10);
-        user.put("username", "christine");
-        user.put("firstName", "Christine");
-        user.put("lastName", "Onyango");
-        user.put("email", "tina@email.com");
-        user.put("password", "12345");
-        user.put("phone","12345");
+        user.put("id", userId);
+        user.put("username", username);
+        user.put("firstName", firstName);
+        user.put("lastName", lastName);
+        user.put("email", email);
+        user.put("password", password);
+        user.put("phone",phone);
         user.put("userStatus", 1);
         Response userResponse = given().spec(requestSpec).body(user).when().post();
         return userResponse;
@@ -41,8 +56,6 @@ public class User {
     @Test
     void userLogin(){
         Response resp =getUserResponse();
-        String username=resp.jsonPath().getString("username");
-        String password=resp.jsonPath().getString("password");
         given().spec(requestSpec).formParam("username", username).formParam("password",password).basePath("/login").
                 get().then().spec(responseSpec).log().all();
     }

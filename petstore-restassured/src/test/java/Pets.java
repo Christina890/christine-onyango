@@ -15,18 +15,17 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
-
 public class Pets {
 
     String petId= utils.fetchConfigProperties("petId");
     String petName = utils.fetchConfigProperties("petName");
     String catergoryId=utils.fetchConfigProperties("catergoryId");
     String photourls=utils.fetchConfigProperties("photourls");
-    String tagId= utils.fetchConfigProperties("photoId");
+    String tagId= utils.fetchConfigProperties("tagId");
     String categoryName=utils.fetchConfigProperties("categoryName");
-    String tagName=utils.fetchConfigProperties("photoName");
+    String tagName=utils.fetchConfigProperties("tagName");
     String petStatus= utils.fetchConfigProperties("petStatus");
+    String petBaseUrl=utils.fetchConfigProperties("petBaseUrl");
 
     private Response response;
     RequestSpecification requestSpec;
@@ -37,7 +36,7 @@ public class Pets {
 
     @BeforeClass
     public void specs(){
-        requestSpec=given().baseUri("https://petstore3.swagger.io/api/v3/pet").contentType("application/json");
+        requestSpec=given().baseUri(petBaseUrl).contentType("application/json");
 
         ResponseSpecBuilder resBuilder=new ResponseSpecBuilder();
         responseSpec= resBuilder.expectStatusCode(200).build();

@@ -9,27 +9,41 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 public class Store {
-        RequestSpecification requestSpec;
-        ResponseSpecification responseSpec;
-        @BeforeClass
+
+    String orderPetId= utils.fetchConfigProperties("orderPetId");
+    String orderId = utils.fetchConfigProperties("orderId");
+    String orderStatus=utils.fetchConfigProperties("orderStatus");
+    String orderQuantity=utils.fetchConfigProperties("orderQuantity");
+    String orderShipDate= utils.fetchConfigProperties("orderShipDate");
+    String orderCompletionStatus=utils.fetchConfigProperties("orderCompletionStatus");
+    String storeBaseUrl = utils.fetchConfigProperties("storeBaseUrl");
+
+    RequestSpecification requestSpec;
+    ResponseSpecification responseSpec;
+
+    public Store() throws IOException {
+    }
+
+    @BeforeClass
         public void specs(){
-            requestSpec=given().baseUri("https://petstore3.swagger.io/api/v3/store").contentType("application/json");
+            requestSpec=given().baseUri(storeBaseUrl).contentType("application/json");
             ResponseSpecBuilder resBuilder=new ResponseSpecBuilder();
             responseSpec= resBuilder.expectStatusCode(200).build();
         }
         @BeforeMethod
         public Response placeOrderResponse(){
             HashMap<String, Object> petOrder=new LinkedHashMap<>();
-            petOrder.put("id",10);
-            petOrder.put("petID",198772);
-            petOrder.put("status","approved");
-            petOrder.put("quantity",3);
-            petOrder.put("shipDate","2022-05-29T09:16:26.118Z");
-            petOrder.put("complete",true);
+            petOrder.put("id",orderId);
+            petOrder.put("petID",orderPetId);
+            petOrder.put("status",orderStatus);
+            petOrder.put("quantity",orderQuantity);
+            petOrder.put("shipDate",orderShipDate);
+            petOrder.put("complete",orderCompletionStatus);
             Response resp = given().spec(requestSpec).basePath("/order").when().body(petOrder).post();
             return resp;
         }
