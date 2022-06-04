@@ -8,15 +8,30 @@ Samsung S20
 
 Android 12
 
+#### Application Under test
+
+Monefy Android Application
+Version 1.16.0 with basic access and no subscription
+
+#### Objectives of testing
+
+- To verify critical functionality that enable users to add income, expenses and manage transactions
+- To Verify the installation process
+- To verify usability of the application
+
 ### Charter 001 - Application Installation
 
 #### Time allocated
 
 20 Minutes
 
+#### Priority
+
+High
+
 #### Coverage
 
-| #   | Step                                          | Expected result                                                                |
+| #   | Feature                                       | Expected result                                                                |
 | --- | --------------------------------------------- | ------------------------------------------------------------------------------ |
 | 1   | Install the Monefy application from PlayStore | Application is installed successfully                                          |
 | 2   | Open the installed application                | The application is opened successfully and user navigated to the launch screen |
@@ -34,6 +49,10 @@ None
 #### Time allocated
 
 20 Minutes
+
+#### Priority
+
+Medium
 
 #### Coverage
 
@@ -57,6 +76,10 @@ Most common settings like currency and language selection should be included as 
 
 20 Minutes
 
+#### Priority
+
+High
+
 #### Coverage
 
 | #   | Feature                                   | Expected result                                                                      |
@@ -72,6 +95,10 @@ Tooltips should automatically close when a user navigates to a different screen 
 #### Time allocated
 
 20 Minutes
+
+#### Priority
+
+High
 
 #### Coverage
 
@@ -89,13 +116,9 @@ Tooltips should automatically close when a user navigates to a different screen 
 
 ### Charter 005 - Add Income
 
-#### Test Device
+#### Priority
 
-Samsung S20
-
-#### OS Version
-
-Android 12
+High
 
 #### Time allocated
 
@@ -118,6 +141,10 @@ Android 12
 
 30 Minutes
 
+#### Priority
+
+High
+
 #### Coverage
 
 | #   | Feature             | Expected result                                                                    |
@@ -138,6 +165,10 @@ A user should be able to edit any digit without necessarily deleting the whole a
 
 45 Minutes
 
+#### Priority
+
+High
+
 #### Coverage
 
 | #   | Feature                               | Expected result                                               |
@@ -152,7 +183,7 @@ The button to confirm the tranfer should be separated from the keyboard.
 Balance should automatically updated after a transfer
 A preview of the balance should be included in the account selection screen to allow users make informed decisions
 
-## Other Features to be testes
+## Other Features to be tested
 
 - Search
 - Features offered on subscription
