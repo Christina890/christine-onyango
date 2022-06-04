@@ -50,12 +50,10 @@ public class User {
     }
     @Test
     void createUser(){
-        Response resp=getUserResponse();
-        Assert.assertEquals(resp.getStatusCode(),200);
+    getUserResponse().then().spec(responseSpec);
     }
     @Test
     void userLogin(){
-        Response resp =getUserResponse();
         given().spec(requestSpec).formParam("username", username).formParam("password",password).basePath("/login").
                 get().then().spec(responseSpec).log().all();
     }
@@ -67,7 +65,7 @@ public class User {
     @Test
     void getUser(){
 
-        given().spec(requestSpec).basePath("/christine").get().then().spec(responseSpec).log().all();
+        given().spec(requestSpec).basePath("/"+username).get().then().spec(responseSpec).log().all();
     }
 
     @Test
