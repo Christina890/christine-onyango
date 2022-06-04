@@ -53,9 +53,7 @@ public class Store {
         }
         @Test
         void placeOrder(){
-        Response orderResponse = placeOrderResponse();
-        Assert.assertEquals(orderResponse.getStatusCode(), 200);
-
+        placeOrderResponse().then().spec(responseSpec);
         }
         @Test
         void findOrder(){
@@ -65,7 +63,6 @@ public class Store {
         void deleteOrder(){
             given().spec(requestSpec).basePath("/order/10").when().delete().then().spec(responseSpec).log().all();
         }
-
         @AfterTest
         void clearOrder(){
             given().spec(requestSpec).basePath("/order/10").when().delete();

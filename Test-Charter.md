@@ -190,3 +190,4 @@ A preview of the balance should be included in the account selection screen to a
 - Create Data Back up
 - Restore data
 - Filters by Day/Week/Month etc
+- Cross Platform Testing

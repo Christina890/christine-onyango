@@ -79,7 +79,4 @@ private Response addPet(){
     void deletePet(){
         given().spec(requestSpec).basePath("/"+petId).when().delete().then().spec(responseSpec).log().all();
     }
-
-
-
 }
