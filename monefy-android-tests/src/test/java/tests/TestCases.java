@@ -38,6 +38,7 @@ public class TestCases {
     void addIncome() throws InterruptedException{
         Expenses expenses=new Expenses();
         expenses.clickToAddIncome();
+        Thread.sleep(500);
         expenses.enterAmount();
         expenses.selectCategory();
         Thread.sleep(500);
@@ -58,10 +59,11 @@ public class TestCases {
         Assert.assertEquals(expenses.getBalance(), "Balance $1,200.00");
     }
     @Test
-    void transferWithZeroBalance(){
+    void transferWithZeroBalance() throws InterruptedException{
         Transfer transfer=new Transfer();
         transfer.clickOnTransferIcon();
         transfer.enterTransferNotes();
+        Thread.sleep(500);
         transfer.enterTransferAmount();
         transfer.submitTransfer();
         Assert.assertNotEquals(transfer.confirmTransfer(),"Transfer was added" );
