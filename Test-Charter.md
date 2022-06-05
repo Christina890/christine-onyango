@@ -56,7 +56,7 @@ Medium
 
 #### Coverage
 
-| #   | Step                                | Expected result                                     |
+| #   | Feature                             | Expected result                                     |
 | --- | ----------------------------------- | --------------------------------------------------- |
 | 1   | Navigate through the launch screens | User is able to navigate from one screen to another |
 | 2   | Verify correctness of the content   | Some gramatical errors in the text                  |
@@ -89,6 +89,7 @@ High
 #### Bugs
 
 Tooltips should automatically close when a user navigates to a different screen or after a few seconds
+Tooltips look like warnings as opposed to suggestions/tips
 
 ### Charter 004 - Add Expenditure
 
@@ -180,7 +181,7 @@ High
 #### Bugs
 
 The button to confirm the tranfer should be separated from the keyboard.
-Balance should automatically updated after a transfer
+Balance should automatically updated after a transfer. To replicate, initiate a transfer when the balance of the initiating account is zero
 A preview of the balance should be included in the account selection screen to allow users make informed decisions
 
 ## Other Features to be tested

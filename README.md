@@ -8,6 +8,8 @@ This task is made of 3 subtasks as follows
 
 ## Monefy Appium Test Suite
 
+Why Appium? Appium is opensource hence free. It also supports both Android and iOS. Additionally, Appium tests can be written in various languages
+
 ### Tools, Frameworks and Languages
 
 - Appium
@@ -16,6 +18,7 @@ This task is made of 3 subtasks as follows
 - Maven
 - Android Studio Emulators
 - Java
+- Android Studio
 
 ### Test Execution
 
@@ -25,7 +28,9 @@ This task is made of 3 subtasks as follows
 
 `allure serve target/allure-results` on terminal
 
-## PetStore API test suite
+## PetStore RestAssured API test suite
+
+Why RestAssured? It is opensource hence a good choice for a test automation framework. Additionally allows for code reusability.
 
 ### Tools, Frameworks and Languages
 
